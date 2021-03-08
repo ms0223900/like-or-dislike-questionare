@@ -6,7 +6,7 @@
         :name="radioName"
         :value="question"
       />
-      <h2>{{ question }}</h2>
+      <h3>{{ question }}</h3>
     </label>
   </div>
 </template>
@@ -25,10 +25,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   label {
     display: flex;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
+    cursor: pointer;
+    &:hover {
+      background-color: #eee;
+    }
   }
 </style>

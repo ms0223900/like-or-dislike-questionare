@@ -5,6 +5,7 @@
       :key="i"
       :index="i"
       :inputVal="radioValuesState.radioValues[i]"
+      :title="question.title"
       :liked="question.liked"
       :disliked="question.disliked"
       @change-question="(value) => handleChange(value, i)"

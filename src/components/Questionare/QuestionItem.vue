@@ -5,6 +5,8 @@
       :value="inputVal"
       @change="$emit('change-question', $event.target.value)"
     >
+      <h3>{{`題目-${index + 1}`}}</h3>
+      <h2>{{ title }}</h2>
       <question-radio-item
         :radioName="`question-${index}`"
         :question="liked.question"
@@ -35,6 +37,7 @@ export default {
   props: {
     index: Number,
     inputVal: String,
+    title: String,
     liked: {
       question: String,
     },

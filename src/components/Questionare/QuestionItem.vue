@@ -6,12 +6,15 @@
       @change="$emit('change-question', $event.target.value)"
     >
       <question-radio-item
+        :radioName="`question-${index}`"
         :question="liked.question"
       />
       <question-radio-item
+        :radioName="`question-${index}`"
         :question="disliked.question"
       />
     </form>
+    <hr />
   </div>
 </template>
 
@@ -24,6 +27,11 @@ export default {
   emits: [
     'change-question',
   ],
+  // watch: {
+  //   inputVal(v) {
+  //     console.log(v);
+  //   },
+  // },
   props: {
     index: Number,
     inputVal: String,
@@ -40,7 +48,7 @@ export default {
 
 <style scoped>
   .form {
-    display: flex;
+    /* display: flex; */
     margin: auto;
     justify-content: center;
   }

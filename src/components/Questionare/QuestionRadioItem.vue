@@ -3,9 +3,10 @@
     <label>
       <input
         type="radio"
+        :name="radioName"
         :value="question"
       />
-      <span>{{ question }}</span>
+      <h2>{{ question }}</h2>
     </label>
   </div>
 </template>
@@ -14,6 +15,9 @@
 export default {
   name: 'QuestionRadioItem',
   props: {
+    radioName: {
+      type: String,
+    },
     question: {
       type: String,
     },
@@ -21,6 +25,10 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 </style>

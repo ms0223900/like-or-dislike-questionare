@@ -1,0 +1,22 @@
+[
+  {
+    "liked": {
+      "question": "a",
+      "score": 80
+    },
+    "disliked": {
+      "question": "b",
+      "score": -80
+    }
+  },
+  {
+    "liked": {
+      "question": "c",
+      "score": 80
+    },
+    "disliked": {
+      "question": "d",
+      "score": -80
+    }
+  }
+]

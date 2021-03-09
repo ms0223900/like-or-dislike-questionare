@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import _ from 'lodash';
 import questions from '@/constants/questions.json';
 import QuestionList from '@/components/Questionare/QuestionList.vue';
 import QuestionareResult from '@/components/Questionare/QuestionareResult.vue';
@@ -57,10 +58,9 @@ export default {
   name: 'QuestionarePartContainer',
   setup() {
     const state = useQuestionarePart({
-      questions: questions.slice(0, 10),
-      // questions,
+      // questions: questions.slice(0, 10),
+      questions: _.shuffle(questions),
     });
-    // console.log(state);
 
     return ({
       state,

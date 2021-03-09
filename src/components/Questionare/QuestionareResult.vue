@@ -21,7 +21,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { variableScopeRegExp } from '@/constants/regExps';
 import { SCORE_LIMITS } from '../../config';
 import locale from '../../constants/locale.json';
@@ -46,8 +46,8 @@ export default {
       }
       return 'NORMAL';
     },
-    scoreLocale(): string {
-      const score = this.$props.score || 0;
+    scoreLocale() {
+      const score = Math.abs(this.$props.score) || 0;
 
       const localeStr = locale.zh['questionare.result.score'] || '';
       return localeStr.replace(variableScopeRegExp, String(score));

@@ -1,0 +1,17 @@
+{
+  "zh": {
+    "questionare.title": "你是惹人愛？還是討人厭？ 測看看你是哪種人！",
+    "questionare.description": "憑直覺選擇其中一個答案（每題不要思考超過5秒鐘）",
+
+    "questionare.result.score": "{score}分！",
+
+    "questionare.result.like.title": "惹人愛的程度是...",
+    "questionare.result.like.desc": "你是個萬人迷，大家都喜歡和你在一起，為大家帶來歡樂！",
+    
+    "questionare.result.normal.title": "惹人愛的程度是...",
+    "questionare.result.normal.desc": "善於察言觀色，但有時候也會講出不合時宜的話，\n一不注意就可能讓場子冷下來，要注意其他人的臉色喔！",
+
+    "questionare.result.dislike.title": "討人厭的程度是...",
+    "questionare.result.dislike.desc": "你就是個討厭鬼，常常講出白目的話，是個句點王！！"
+  }
+}

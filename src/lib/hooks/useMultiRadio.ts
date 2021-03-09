@@ -22,9 +22,14 @@ const useMultiRadio = ({
     console.log(state.radioValues);
   };
 
+  const handleResetValues = () => {
+    state.radioValues = getInitRadioValues(radioAmount);
+  };
+
   return ({
     radioValuesState: state,
     handleChange,
+    handleResetValues,
   });
 };
 export default useMultiRadio;

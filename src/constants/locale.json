@@ -1,7 +1,7 @@
 {
   "zh": {
     "questionare.title": "你是惹人愛？還是討人厭？ 測看看你是哪種人！",
-    "questionare.description": "憑直覺選擇其中一個答案（每題不要思考超過5秒鐘）",
+    "questionare.description": "憑直覺選擇其中一個答案\n（每題不要思考超過5秒鐘，共20道題目）",
 
     "questionare.result.score": "{score}分！",
 

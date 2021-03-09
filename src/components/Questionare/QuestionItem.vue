@@ -1,7 +1,7 @@
 <template>
   <div>
     <form
-      class="form"
+      :class="['form', { selected: isSelected, }]"
       :value="inputVal"
       @change="$emit('change-question', $event.target.value)"
     >
@@ -45,14 +45,24 @@ export default {
       question: String,
     },
   },
-
+  computed: {
+    isSelected() {
+      return this.inputVal;
+    },
+  },
 };
 </script>
 
-<style scoped>
-  .form {
+<style lang="scss" scoped>
+  form {
     /* display: flex; */
     margin: auto;
     justify-content: center;
+    &.selected {
+      background-color: #eee;
+    }
+  }
+  h2 {
+    color: var(--primary)
   }
 </style>

@@ -29,6 +29,7 @@ const useQuestionarePart = ({
   const {
     radioValuesState,
     handleChange,
+    handleResetValues,
   } = useMultiRadio({
     radioAmount: questions.length,
   });
@@ -39,14 +40,17 @@ const useQuestionarePart = ({
     scoreState.score = avgScore;
   };
 
+  const handleResetResult = () => {
+    scoreState.score = undefined;
+    handleResetValues();
+  };
+
   const isAllDone = computed(() => (
     radioValuesState.radioValues.every((val) => val !== '')
-    // true
   ));
   const shouldShowResult = computed(() => (
     typeof scoreState.score === 'number'
   ));
-  console.log(shouldShowResult.value);
 
   return ({
     isAllDone,
@@ -55,6 +59,7 @@ const useQuestionarePart = ({
     scoreState,
     radioValuesState,
     handleGetResult,
+    handleResetResult,
     handleChange,
   });
 };

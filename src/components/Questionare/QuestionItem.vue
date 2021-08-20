@@ -8,6 +8,7 @@
       <h3>{{`題目-${index + 1}`}}</h3>
       <h2>{{ title }}</h2>
       <question-radio-item
+        ref=""
         :radioName="`question-${index}`"
         :question="liked.question"
       />

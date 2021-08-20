@@ -1,5 +1,8 @@
 <template>
   <div>
+    <h2>{{ `Page Listen From Component: ${pageNow}` }}</h2>
+    <pagination-container ref="paginationRef" :pageAmount="12" @page-changed="updatePage" />
+    <button @click="updatePageFromOutside(10)">To Page: 10</button>
     <div
       class="question-wrapper"
       v-if="!state.shouldShowResult.value"
@@ -40,12 +43,14 @@
 </template>
 
 <script>
+import { ref } from 'vue';
 import _ from 'lodash';
 import questions from '@/constants/questions.json';
 import QuestionList from '@/components/Questionare/QuestionList.vue';
 import QuestionareResult from '@/components/Questionare/QuestionareResult.vue';
 import QuestionareTitle from '@/components/Questionare/QuestionareTitle.vue';
 import ConfirmButton from '@/components/Questionare/ConfirmButton.vue';
+import PaginationContainer from '@/components/Common/Pagination/PaginationContainer.vue';
 import useQuestionarePart from './functions/useQuestionarePart';
 
 export default {
@@ -54,17 +59,29 @@ export default {
     QuestionareResult,
     QuestionareTitle,
     ConfirmButton,
+    PaginationContainer,
   },
   name: 'QuestionarePartContainer',
   setup() {
+    const pageNow = ref(0);
+    const updatePage = (newPage) => {
+      pageNow.value = newPage;
+    };
     const state = useQuestionarePart({
       // questions: questions.slice(0, 10),
       questions: _.shuffle(questions),
     });
 
     return ({
+      pageNow,
+      updatePage,
       state,
     });
+  },
+  methods: {
+    updatePageFromOutside(newPage = 10) {
+      this.$refs.paginationRef.handleUpdatePage(newPage);
+    },
   },
 };
 </script>

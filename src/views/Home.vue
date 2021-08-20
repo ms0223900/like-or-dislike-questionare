@@ -14,5 +14,11 @@ export default defineComponent({
   components: {
     QuestionarePartContainer,
   },
+  beforeRouteEnter(to) {
+    console.log(to);
+  },
+  beforeRouteUpdate(to) {
+    console.log(to);
+  },
 });
 </script>

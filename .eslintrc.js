@@ -12,6 +12,8 @@ module.exports = {
     ecmaVersion: 2020,
   },
   rules: {
+    'vue/no-parsing-error': 0,
+    '@typescript-eslint/no-empty-function': 0,
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'linebreak-style': ["off", "windows"]
